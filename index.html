@@ -13,6 +13,23 @@
     <div class="scene-bg" aria-hidden="true"></div>
     <div class="red-fog" aria-hidden="true"></div>
     <div class="neon-grid" aria-hidden="true"></div>
+    <canvas class="cinematic-webgl" id="cinematicWebgl" aria-hidden="true"></canvas>
+    <svg class="cinematic-gold-thread" id="cinematicGoldThread" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+      <path class="thread-main" d="M80 690 C310 510 530 710 730 430 S1090 180 1320 330" />
+      <path class="thread-cards" d="M280 580 C460 360 610 520 790 330 S1090 520 1230 240" />
+      <path class="thread-orb" d="M1100 690 C1190 620 1300 620 1360 700" />
+    </svg>
+    <div class="cinematic-depth-world" aria-hidden="true">
+      <img class="depth-layer depth-sky" src="./assets/hero-cg-bg.jpg" alt="" />
+      <img class="depth-layer depth-city" src="./assets/hero-wide.jpg" alt="" />
+      <img class="depth-layer depth-street" src="./assets/cyber-wave-grid.jpg" alt="" />
+      <img class="depth-layer depth-ship" src="./assets/cg/feature-journey.jpg" alt="" />
+      <img class="depth-layer depth-petal petal-a" src="./assets/cg/sticker-heart-cutout.png" alt="" />
+      <img class="depth-layer depth-petal petal-b" src="./assets/cg/sticker-happy-cutout.png" alt="" />
+      <span class="depth-gate"></span>
+      <span class="depth-wave wave-one"></span>
+      <span class="depth-wave wave-two"></span>
+    </div>
     <div class="particle-field" aria-hidden="true"></div>
     <div class="glitch-scan" aria-hidden="true"></div>
     <div class="noise-layer" aria-hidden="true"></div>
@@ -39,6 +56,12 @@
       <b>00.00s</b>
       <span>HOME / idle</span>
       <i></i>
+      <small>CAM 0,0,8 / HERO 1.00 / PARTICLES 0 / idle / BLOOM 0.35 / FPS 60 / high / 0%</small>
+    </div>
+    <div class="motion-controls" aria-label="Cinematic showreel controls">
+      <button data-motion-control="auto" type="button">AUTO</button>
+      <button data-motion-control="pause" type="button">PAUSE</button>
+      <button data-motion-control="replay" type="button">REPLAY</button>
     </div>
 
     <header class="nav-shell">
@@ -331,5 +354,6 @@
   </dialog>
 
   <script src="./script.js"></script>
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>

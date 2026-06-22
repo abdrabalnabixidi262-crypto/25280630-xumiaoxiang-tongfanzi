@@ -12,11 +12,13 @@ const debugTimeline = document.querySelector("#debugTimeline");
 const query = new URLSearchParams(window.location.search);
 const showreelMode = query.get("showreel") === "1";
 const debugMode = query.get("debugTimeline") === "1";
+const cinematicV2Enabled = true;
 let transitionLocked = false;
 let transitionTimer = 0;
 let showreelStart = 0;
 let showreelFrame = 0;
 let touchStartY = 0;
+let cinematicBridgeActive = false;
 
 const image = (src, caption) => ({ src, caption });
 
@@ -277,6 +279,20 @@ function setActivePanel(id) {
   }, showreelMode ? 320 : 780);
 }
 
+window.__setPanelFromCinematic = (id, options = {}) => {
+  cinematicBridgeActive = true;
+  setActivePanel(id);
+  if (options.instant) {
+    transitionLocked = false;
+    document.body.dataset.transitioning = "0";
+  }
+  window.setTimeout(() => {
+    cinematicBridgeActive = false;
+  }, 0);
+};
+
+window.__openCinematicDetail = (id) => openDetail(id);
+
 function openDetail(id) {
   const detail = details[id] || details.hero;
   modalTitle.textContent = detail.title;
@@ -327,6 +343,7 @@ function seedParticles() {
 }
 
 function goRelative(direction) {
+  window.__pauseShowreel?.("manual");
   const current = document.body.dataset.activePanel || "home";
   const index = Math.max(0, panelOrder.indexOf(current));
   setActivePanel(panelOrder[(index + direction + panelOrder.length) % panelOrder.length]);
@@ -405,16 +422,19 @@ window.__setShowreelTime = (second) => {
 document.addEventListener("click", (event) => {
   const actionButton = event.target.closest("[data-action]");
   if (actionButton) {
+    window.__pauseShowreel?.("manual");
     runAction(actionButton.dataset.action);
     return;
   }
   const targetButton = event.target.closest("[data-target]");
   if (targetButton) {
+    if (!cinematicBridgeActive) window.__pauseShowreel?.("manual");
     setActivePanel(targetButton.dataset.target);
     return;
   }
   const detailButton = event.target.closest("[data-detail]");
   if (detailButton) {
+    window.__pauseShowreel?.("manual");
     openDetail(detailButton.dataset.detail);
   }
 });
@@ -476,4 +496,4 @@ seedParticles();
 setActivePanel("home");
 transitionLocked = false;
 document.body.dataset.transitioning = "0";
-if (showreelMode) startShowreel();
+if (showreelMode && !cinematicV2Enabled) startShowreel();

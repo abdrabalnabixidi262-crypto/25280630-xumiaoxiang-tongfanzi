@@ -1,0 +1,28 @@
+{
+  "project": "Tong Fan Zai - Quanzhou City IP And Cultural Creative Design",
+  "student": {
+    "name": "Xu Miaoxiang",
+    "id": "25280630"
+  },
+  "hero": {
+    "title": "TONG FAN ZAI",
+    "subtitle": "Quanzhou city IP and cultural creative portfolio",
+    "keywords": ["Haisi", "Erythrina", "Sail", "Minnan", "Red CG"]
+  },
+  "profile": {
+    "name": "Tong Fan Zai",
+    "city": "Quanzhou",
+    "role": "Maritime Silk Road culture messenger",
+    "traits": ["warm", "clever", "friendly", "open"]
+  },
+  "sections": [
+    "HOME",
+    "INDEX",
+    "PROFILE",
+    "TIMELINE",
+    "SKILLS",
+    "PROJECTS",
+    "GALLERY",
+    "CONTACT"
+  ]
+}
