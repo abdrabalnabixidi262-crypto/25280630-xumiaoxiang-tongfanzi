@@ -13,6 +13,8 @@
   --line-red: rgba(229, 42, 32, 0.5);
   --glow-red: rgba(229, 42, 32, 0.62);
   --glow-gold: rgba(245, 183, 61, 0.48);
+  --font-display: Impact, Haettenschweiler, "Arial Narrow", "Bahnschrift Condensed", sans-serif;
+  --font-ui: "Bahnschrift Condensed", "Arial Narrow", "Microsoft YaHei UI", "PingFang SC", Arial, sans-serif;
 }
 
 * {
@@ -29,7 +31,7 @@ body {
 
 body {
   overflow: hidden;
-  font-family: "Arial Narrow", "Microsoft YaHei UI", "PingFang SC", "Arial", sans-serif;
+  font-family: var(--font-ui);
 }
 
 button {
@@ -37,6 +39,7 @@ button {
   color: inherit;
   font: inherit;
   cursor: pointer;
+  overflow-wrap: anywhere;
 }
 
 img {
@@ -472,9 +475,11 @@ body.debug-timeline-on .debug-timeline {
 }
 
 .brand strong {
+  font-family: var(--font-display);
   font-size: 16px;
   font-weight: 900;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 16px rgba(229, 42, 32, 0.42);
 }
 
 .brand small {
@@ -496,7 +501,7 @@ body.debug-timeline-on .debug-timeline {
   padding: 0 10px;
   border: 1px solid transparent;
   color: rgba(248, 239, 222, 0.72);
-  font-family: "Arial Narrow", "Microsoft YaHei UI", sans-serif;
+  font-family: var(--font-ui);
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -536,7 +541,7 @@ body.debug-timeline-on .debug-timeline {
 
 .vertical-code b {
   color: var(--gold);
-  font-family: Impact, "Arial Narrow", sans-serif;
+  font-family: var(--font-display);
   font-size: 42px;
   line-height: 0.9;
   text-shadow: 0 0 22px var(--glow-gold);
@@ -605,7 +610,7 @@ body.debug-timeline-on .debug-timeline {
 .panel-hud,
 .modal-kicker {
   color: var(--gold);
-  font-family: "Arial Narrow", "Microsoft YaHei UI", sans-serif;
+  font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.24em;
@@ -629,10 +634,10 @@ body.debug-timeline-on .debug-timeline {
 .section-copy h2,
 .hero-copy h1 {
   margin: 10px 0 16px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow", "Microsoft YaHei UI", sans-serif;
+  font-family: var(--font-display);
   font-weight: 900;
   line-height: 0.86;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -640,6 +645,7 @@ body.debug-timeline-on .debug-timeline {
   max-width: 760px;
   font-size: clamp(58px, 9vw, 126px);
   text-shadow: 0 0 24px rgba(229, 42, 32, 0.52);
+  overflow-wrap: anywhere;
 }
 
 .section-copy p,
@@ -671,6 +677,7 @@ body.debug-timeline-on .debug-timeline {
   color: var(--cream);
   text-shadow: 0 0 18px rgba(229, 42, 32, 0.42), 0 0 60px rgba(229, 42, 32, 0.3);
   mix-blend-mode: screen;
+  overflow-wrap: anywhere;
 }
 
 .hero-copy h1::before,
@@ -712,7 +719,7 @@ body.debug-timeline-on .debug-timeline {
   display: block;
   margin-top: 0;
   color: var(--red-hot);
-  font-family: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(46px, 6.6vw, 98px);
   font-style: normal;
   letter-spacing: 0;
@@ -737,6 +744,8 @@ body.debug-timeline-on .debug-timeline {
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.16em;
+  text-align: center;
+  overflow-wrap: anywhere;
   box-shadow: 0 0 30px rgba(229, 42, 32, 0.22);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }

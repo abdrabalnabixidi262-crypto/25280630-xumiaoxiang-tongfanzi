@@ -21,171 +21,220 @@ const image = (src, caption) => ({ src, caption });
 
 const gallerySets = {
   core: [
-    image("./assets/cg/feature-profile.jpg", "桐帆仔角色档案 CG 数据卡"),
-    image("./assets/brand-board.png", "IP 信息档案原始作品板"),
-    image("./assets/hero-cutout.png", "桐帆仔主形象透明素材"),
+    image("./assets/cg/feature-profile.jpg", "Red CG character profile data card"),
+    image("./assets/brand-board.png", "Original IP information board"),
+    image("./assets/hero-cutout.png", "Transparent main character asset"),
   ],
   symbols: [
-    image("./assets/cg/work-card-09.jpg", "基础元素库红色 CG 包装"),
-    image("./assets/elements-board.png", "基础元素库完整作品板"),
-    image("./assets/colors-board.png", "比例规范与标准色值作品板"),
+    image("./assets/cg/work-card-09.jpg", "Culture symbol library in red CG presentation"),
+    image("./assets/elements-board.png", "Original visual element library board"),
+    image("./assets/colors-board.png", "Proportion and standard color board"),
   ],
   personality: [
-    image("./assets/cg/sticker-card-happy.jpg", "开心表情红色舞台卡"),
-    image("./assets/cg/sticker-card-heart.jpg", "比心表情红色舞台卡"),
-    image("./assets/cg/sticker-card-welcome.jpg", "欢迎表情红色舞台卡"),
+    image("./assets/cg/sticker-card-happy.jpg", "Happy expression stage card"),
+    image("./assets/cg/sticker-card-heart.jpg", "Heart gesture expression stage card"),
+    image("./assets/cg/sticker-card-welcome.jpg", "Welcome expression stage card"),
   ],
   journey: [
-    image("./assets/cg/work-card-01.jpg", "IP 信息档案"),
-    image("./assets/cg/work-card-06.jpg", "标准表情包设计"),
-    image("./assets/cg/work-card-07.jpg", "标准动作规范"),
+    image("./assets/cg/work-card-01.jpg", "IP information board"),
+    image("./assets/cg/work-card-06.jpg", "Standard expression pack board"),
+    image("./assets/cg/work-card-07.jpg", "Standard action guide board"),
   ],
   emotes: [
-    image("./assets/cg/sticker-card-happy.jpg", "开心"),
-    image("./assets/cg/sticker-card-surprise.jpg", "惊喜"),
-    image("./assets/cg/sticker-card-curious.jpg", "好奇"),
-    image("./assets/cg/sticker-card-heart.jpg", "比心"),
-    image("./assets/cg/sticker-card-think.jpg", "思考"),
-    image("./assets/cg/sticker-card-welcome.jpg", "欢迎"),
+    image("./assets/cg/sticker-card-happy.jpg", "Happy"),
+    image("./assets/cg/sticker-card-surprise.jpg", "Surprise"),
+    image("./assets/cg/sticker-card-curious.jpg", "Curious"),
+    image("./assets/cg/sticker-card-heart.jpg", "Heart"),
+    image("./assets/cg/sticker-card-think.jpg", "Thinking"),
+    image("./assets/cg/sticker-card-welcome.jpg", "Welcome"),
   ],
   motion: [
-    image("./assets/cg/motion-happy.gif", "开心 GIF"),
-    image("./assets/cg/motion-surprise.gif", "惊喜 GIF"),
-    image("./assets/cg/motion-heart.gif", "比心 GIF"),
-    image("./assets/cg/motion-think.gif", "思考 GIF"),
-    image("./assets/cg/motion-welcome.gif", "欢迎 GIF"),
-    image("./assets/cg/motion-recommend.gif", "推荐 GIF"),
+    image("./assets/cg/motion-happy.gif", "Happy motion GIF"),
+    image("./assets/cg/motion-surprise.gif", "Surprise motion GIF"),
+    image("./assets/cg/motion-heart.gif", "Heart motion GIF"),
+    image("./assets/cg/motion-think.gif", "Thinking motion GIF"),
+    image("./assets/cg/motion-welcome.gif", "Welcome motion GIF"),
+    image("./assets/cg/motion-recommend.gif", "Recommendation motion GIF"),
   ],
   applications: [
-    image("./assets/application-01.png", "文创应用作品一"),
-    image("./assets/application-02.png", "文创应用作品二"),
-    image("./assets/application-03.png", "文创应用作品三"),
-    image("./assets/application-04.png", "文创应用作品四"),
+    image("./assets/application-01.png", "Creative product application one"),
+    image("./assets/application-02.png", "Creative product application two"),
+    image("./assets/application-03.png", "Creative product application three"),
+    image("./assets/application-04.png", "Creative product application four"),
   ],
   boards: [
-    image("./assets/brand-board.png", "IP 信息档案"),
-    image("./assets/expressions-board.png", "标准表情包设计"),
-    image("./assets/actions-board.png", "标准动作规范"),
-    image("./assets/colors-board.png", "比例规范与标准色值"),
-    image("./assets/elements-board.png", "基础元素库"),
-    image("./assets/poster-qr.png", "海报与作品信息码"),
+    image("./assets/brand-board.png", "IP information board"),
+    image("./assets/expressions-board.png", "Standard expression pack board"),
+    image("./assets/actions-board.png", "Standard action guide board"),
+    image("./assets/colors-board.png", "Proportion and color standard board"),
+    image("./assets/elements-board.png", "Basic element library"),
+    image("./assets/poster-qr.png", "Original poster and scannable work information code"),
   ],
 };
 
 const details = {
   hero: {
-    title: "TONGFANZI IP FILE",
-    text: "桐帆仔是以泉州海丝文化为核心的城市 IP。主形象融合刺桐花、福船风帆、闽南红砖与海浪纹样，适合城市宣传、文创产品、表情传播和网页展示。",
+    title: "TONG FAN ZAI IP FILE",
+    text: "Tong Fan Zai is a Quanzhou city IP built around Maritime Silk Road culture. The character combines Erythrina flowers, sail forms, Minnan red brick color and wave patterns for city promotion, cultural products, expressions and web exhibition.",
     images: gallerySets.core,
   },
   identity: {
-    title: "IDENTITY / 海丝文化牵线小使者",
-    text: "角色用牵线和扬帆两个动作意象连接古今，以亲和 Q 版造型降低文化传播门槛。",
+    title: "IDENTITY / HAISI CULTURE MESSENGER",
+    text: "The character connects tradition and future through the image of a gold thread and a sail. A friendly chibi proportion lowers the threshold for cultural communication.",
     images: gallerySets.core,
   },
   symbol: {
-    title: "SYMBOL SYSTEM / 视觉符号",
-    text: "刺桐花头饰、风帆发冠、红砖服饰、海浪纹样和南音乐器共同构成桐帆仔的识别系统。",
+    title: "SYMBOL SYSTEM",
+    text: "The Erythrina headpiece, sail hair crown, red-gold Minnan costume, wave pattern and Nanyin-inspired details form the recognizable Tong Fan Zai visual system.",
     images: gallerySets.symbols,
   },
   persona: {
-    title: "PERSONA / 性格设定",
-    text: "热情、机灵、亲和、开放。表情包与动作规范围绕这些关键词展开，让角色能在社交和导视场景里自然出现。",
+    title: "PERSONA",
+    text: "Warm, clever, friendly and open. The expression pack and action guide extend those keywords into social media, exhibition guidance and digital interactions.",
     images: gallerySets.personality,
   },
   step1: {
     title: "01 CULTURE EXTRACTION",
-    text: "从泉州海丝、刺桐花、福船、闽南建筑和南音元素中提取可转译的视觉符号。",
-    images: [image("./assets/elements-board.png", "基础元素库"), image("./assets/cg/work-card-09.jpg", "元素库 CG 包装"), image("./assets/colors-board.png", "色彩与比例规范")],
+    text: "Visual symbols are extracted from Quanzhou Maritime Silk Road culture, Erythrina flowers, lucky ships, Minnan architecture and Nanyin elements.",
+    images: [
+      image("./assets/elements-board.png", "Basic element library"),
+      image("./assets/cg/work-card-09.jpg", "CG packaged element library"),
+      image("./assets/colors-board.png", "Color and proportion standard"),
+    ],
   },
   step2: {
     title: "02 CHARACTER DESIGN",
-    text: "通过 2.5 头身比例、风帆发冠、刺桐花头饰和红金服饰建立可识别的主形象。",
-    images: [image("./assets/brand-board.png", "IP 信息档案"), image("./assets/cg/work-card-01.jpg", "信息档案 CG 包装"), image("./assets/hero-cutout.png", "主形象透明素材")],
+    text: "The 2.5-head chibi proportion, sail crown, Erythrina ornament and red-gold costume build a clear and expandable main IP figure.",
+    images: [
+      image("./assets/brand-board.png", "IP information board"),
+      image("./assets/cg/work-card-01.jpg", "CG packaged information board"),
+      image("./assets/hero-cutout.png", "Transparent main character asset"),
+    ],
   },
   step3: {
     title: "03 EXPRESSION & ACTION",
-    text: "表情包、动态 GIF 和动作规范让角色拥有可传播、可扩展、可动效化的内容系统。",
-    images: [image("./assets/expressions-board.png", "标准表情包设计"), image("./assets/actions-board.png", "标准动作规范"), image("./assets/cg/motion-happy.gif", "动态表情示例")],
+    text: "Static stickers, motion GIFs and action standards give the character a communication system that can move across social media, guides and web UI moments.",
+    images: [
+      image("./assets/expressions-board.png", "Standard expression pack board"),
+      image("./assets/actions-board.png", "Standard action guide board"),
+      image("./assets/cg/motion-happy.gif", "Motion expression example"),
+    ],
   },
   step4: {
     title: "04 WEB INTEGRATION",
-    text: "将 IP 档案、作品规范、表情动作和应用场景整合为红色游戏 CG 风格网页作品集。",
-    images: [image("./assets/cg/feature-projects.jpg", "项目模块封面"), image("./assets/cg/feature-skills.jpg", "技能模块封面"), image("./assets/cg/feature-journey.jpg", "流程模块封面")],
+    text: "The IP file, design standards, expression system and application scenarios are rebuilt as a red game-CG immersive website portfolio.",
+    images: [
+      image("./assets/cg/feature-projects.jpg", "Project module cover"),
+      image("./assets/cg/feature-skills.jpg", "Skill module cover"),
+      image("./assets/cg/feature-journey.jpg", "Journey module cover"),
+    ],
   },
   "skill-expression": {
     title: "EXPRESSION COMMUNICATION",
-    text: "12 款静态表情和 12 款 GIF 动效覆盖欢迎、开心、惊喜、思考、比心、谢谢等常用传播场景。",
+    text: "Static stickers and motion GIFs cover greetings, joy, surprise, thinking, heart gestures and thanks, making the IP usable in everyday digital communication.",
     images: gallerySets.emotes,
   },
   "skill-brand": {
     title: "BRAND RECOGNITION",
-    text: "通过红金主色、风帆剪影、圆润头身比例和固定表情语言建立统一品牌识别。",
-    images: [image("./assets/colors-board.png", "标准色值"), image("./assets/brand-board.png", "IP 信息档案"), image("./assets/cg/work-card-08.jpg", "色彩规范 CG 卡")],
+    text: "Red-gold color, sail silhouette, rounded proportions and repeatable facial language create a stable visual identity for the character.",
+    images: [
+      image("./assets/colors-board.png", "Standard color values"),
+      image("./assets/brand-board.png", "IP information board"),
+      image("./assets/cg/work-card-08.jpg", "CG color standard card"),
+    ],
   },
   "skill-guide": {
     title: "GUIDE & EXHIBITION",
-    text: "动作姿态可用于展板、地图、场馆指引和活动现场导视，让角色成为观众路径中的视觉导游。",
-    images: [image("./assets/pose-guide-cutout.png", "导视动作透明素材"), image("./assets/actions-board.png", "动作规范作品板"), image("./assets/cg/work-card-07.jpg", "动作规范 CG 卡")],
+    text: "Action poses can be used in exhibition panels, maps, venue signage and event guidance so the IP becomes a visual guide inside the audience path.",
+    images: [
+      image("./assets/pose-guide-cutout.png", "Transparent guide pose"),
+      image("./assets/actions-board.png", "Original action standard board"),
+      image("./assets/cg/work-card-07.jpg", "CG action standard card"),
+    ],
   },
   "skill-city": {
     title: "CITY PROMOTION",
-    text: "角色承载泉州海丝叙事，可用于城市活动页面、宣传海报、短视频封面和文旅物料。",
-    images: [image("./assets/hero-wide.jpg", "泉州 IP 主视觉"), image("./assets/poster-qr.png", "海报与作品信息码"), image("./assets/cg/feature-profile.jpg", "角色档案 CG 卡")],
+    text: "Tong Fan Zai carries Quanzhou's Maritime Silk Road story for city event pages, posters, short-video covers and tourism materials.",
+    images: [
+      image("./assets/hero-wide.jpg", "Quanzhou IP hero visual"),
+      image("./assets/poster-qr.png", "Original poster and work information code"),
+      image("./assets/cg/feature-profile.jpg", "Character profile CG card"),
+    ],
   },
   "skill-product": {
     title: "CREATIVE PRODUCT",
-    text: "文创方向可延展到帆布袋、贴纸、票券、徽章、包装和数字周边。",
+    text: "The cultural creative system extends into canvas bags, stickers, tickets, badges, packaging, digital peripherals and exhibition merchandise.",
     images: gallerySets.applications,
   },
   "skill-motion": {
     title: "MOTION SYSTEM",
-    text: "动态 GIF 表情可服务网页转场、视频贴片、弹窗反馈和角色互动提示。",
+    text: "Motion GIF expressions support web transitions, video stickers, modal feedback and character interaction prompts.",
     images: gallerySets.motion,
   },
   "skill-poster": {
     title: "POSTER & INFO CODE",
-    text: "海报与作品信息码用于线下展示入口，将网页作品集与提交材料连接起来。",
-    images: [image("./assets/poster-qr.png", "海报与作品信息码"), image("./assets/poster-qr-thumb.jpg", "海报缩略图"), image("./assets/cg/work-card-05.jpg", "应用展示 CG 卡")],
+    text: "The original poster and work information code connect offline exhibition materials with the online portfolio. The QR area is kept from the provided asset instead of being redrawn.",
+    images: [
+      image("./assets/poster-qr.png", "Original poster and information code"),
+      image("./assets/poster-qr-thumb.jpg", "Poster thumbnail"),
+      image("./assets/cg/work-card-05.jpg", "CG packaged application card"),
+    ],
   },
   "skill-story": {
     title: "CULTURE STORY",
-    text: "叙事围绕一线牵古今、一帆向海丝展开，强调城市记忆、开放包容和年轻化传播。",
-    images: [image("./assets/cg/feature-journey.jpg", "设计旅程封面"), image("./assets/elements-board.png", "文化元素库"), image("./assets/hero-wide.jpg", "主视觉海丝场景")],
+    text: "The narrative follows one thread connecting past and present and one sail facing the Maritime Silk Road, emphasizing city memory and future-facing communication.",
+    images: [
+      image("./assets/cg/feature-journey.jpg", "Design journey cover"),
+      image("./assets/elements-board.png", "Culture element library"),
+      image("./assets/hero-wide.jpg", "Maritime Silk Road hero visual"),
+    ],
   },
   emotes: {
     title: "EXPRESSION PACK",
-    text: "表情包已经做去白底和红色 CG 舞台包装，不再直接贴白底原图，适合在网页中作为独立作品展示。",
+    text: "The expression pack is presented with transparent cutouts and red CG stage cards, avoiding plain white-background sticker dumps.",
     images: gallerySets.emotes,
   },
   motion: {
     title: "MOTION GIF PACK",
-    text: "动态 GIF 表情用于强化网页的互动感和角色生命力。",
+    text: "The motion GIF expressions add interaction energy and character liveliness to the web portfolio.",
     images: gallerySets.motion,
   },
   actions: {
     title: "ACTION GUIDE",
-    text: "标准动作规范提供站立、欢迎、引导等姿态，方便后续海报、导视和短视频延展。",
-    images: [image("./assets/actions-board.png", "动作规范完整作品板"), image("./assets/pose-standing-cutout.png", "站立动作"), image("./assets/pose-waving-cutout.png", "欢迎动作"), image("./assets/pose-guide-cutout.png", "引导动作")],
+    text: "Standing, waving and guiding poses create a reusable action standard for posters, signage and short-form visual expansion.",
+    images: [
+      image("./assets/actions-board.png", "Complete action standard board"),
+      image("./assets/pose-standing-cutout.png", "Standing pose"),
+      image("./assets/pose-waving-cutout.png", "Welcome pose"),
+      image("./assets/pose-guide-cutout.png", "Guide pose"),
+    ],
   },
   colors: {
     title: "RED COLOR SYSTEM",
-    text: "主色调跟随桐帆仔本身的刺桐红，辅以海丝金、深海青和米白，形成红黑 CG 网站氛围。",
-    images: [image("./assets/colors-board.png", "比例规范与标准色值"), image("./assets/cg/work-card-08.jpg", "色彩规范 CG 包装"), image("./assets/hero-cutout.png", "主形象色彩参考")],
+    text: "The main palette follows the Erythrina red of Tong Fan Zai, supported by Maritime Silk Road gold, deep sea teal and rice white for a red-black CG atmosphere.",
+    images: [
+      image("./assets/colors-board.png", "Proportion and standard color board"),
+      image("./assets/cg/work-card-08.jpg", "CG packaged color card"),
+      image("./assets/hero-cutout.png", "Main character color reference"),
+    ],
   },
   applications: {
     title: "APPLICATION MODULES",
-    text: "文创应用展示角色在城市传播、活动物料和周边设计中的延展能力。",
+    text: "The application module shows how the character can expand into city promotion, event materials and cultural creative products.",
     images: gallerySets.applications,
   },
   finalWeb: {
     title: "WEB PORTFOLIO",
-    text: "最终网页采用分屏导航、红色 HUD、电子闪烁、扫描线、粒子、舞台画廊和图文弹窗构成。",
-    images: [image("./assets/cg/feature-projects.jpg", "项目模块"), image("./assets/cg/feature-profile.jpg", "角色模块"), image("./assets/cg/feature-skills.jpg", "能力模块")],
+    text: "The final website combines screen-based navigation, red HUD layers, electronic flicker, scan lines, particles, stage galleries and image-rich modal windows.",
+    images: [
+      image("./assets/cg/feature-projects.jpg", "Project module"),
+      image("./assets/cg/feature-profile.jpg", "Character module"),
+      image("./assets/cg/feature-skills.jpg", "Skill module"),
+    ],
   },
   finalIp: {
     title: "FINAL IP SYSTEM",
-    text: "桐帆仔作品系统包含角色档案、基础视图、表情包、动作规范、比例色值、元素库、海报信息码与网页作品集。",
+    text: "The Tong Fan Zai system includes character profile, base views, expression packs, action standards, proportions, color values, element library, original poster information code and web portfolio.",
     images: gallerySets.boards,
   },
 };
@@ -193,11 +242,11 @@ const details = {
 for (let index = 1; index <= 7; index += 1) {
   details[`work${index}`] = {
     title: `WORK FILE ${String(index).padStart(2, "0")}`,
-    text: "点击查看桐帆仔作品板的完整图像与红色 CG 包装效果。",
+    text: "Open this file to view the original Tong Fan Zai board together with its red CG website presentation layer.",
     images: [
-      image(`./assets/cg/work-card-${String(index).padStart(2, "0")}.jpg`, "红色 CG 包装卡"),
+      image(`./assets/cg/work-card-${String(index).padStart(2, "0")}.jpg`, "Red CG packaged card"),
       gallerySets.boards[(index - 1) % gallerySets.boards.length],
-      image("./assets/hero-cutout.png", "桐帆仔主形象"),
+      image("./assets/hero-cutout.png", "Tong Fan Zai main character"),
     ],
   };
 }
@@ -352,8 +401,6 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  const current = document.body.dataset.activePanel || "home";
-  const index = Math.max(0, panelOrder.indexOf(current));
   if (event.key === "ArrowRight") {
     goRelative(1);
   }
