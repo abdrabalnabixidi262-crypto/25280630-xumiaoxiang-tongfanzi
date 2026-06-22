@@ -131,8 +131,12 @@
           <b>Design Journey</b>
         </button>
       </div>
-      <div class="controller-panel" aria-hidden="true">
-        <i></i><i></i><b>OK</b><i></i><i></i>
+      <div class="gamepad controller-panel" aria-label="Portfolio game controller">
+        <button class="pad-btn pad-up" data-action="prev" aria-label="Previous section"><span>PREV</span></button>
+        <button class="pad-btn pad-left" data-target="profile" aria-label="Open character profile"><span>IP</span></button>
+        <button class="pad-btn pad-ok" data-action="next" aria-label="Advance portfolio"><span>OK</span></button>
+        <button class="pad-btn pad-right" data-target="projects" aria-label="Open project files"><span>FILES</span></button>
+        <button class="pad-btn pad-down" data-target="skills" aria-label="Open AI workflow"><span>AI</span></button>
       </div>
     </section>
 
@@ -230,8 +234,12 @@
         <button data-detail="skill-poster">Poster & Code<img src="./assets/cg/work-card-05.jpg" alt="Poster and code artwork" /></button>
         <button data-detail="skill-story">Culture Story<img src="./assets/cg/feature-journey.jpg" alt="Culture story artwork" /></button>
       </div>
-      <div class="remote-ui" aria-hidden="true">
-        <span></span><b>OK</b><i></i><i></i><i></i>
+      <div class="gamepad remote-ui" aria-label="AI workflow controller">
+        <button class="pad-btn pad-up" data-target="timeline" aria-label="Open design journey"><span>MAP</span></button>
+        <button class="pad-btn pad-left" data-action="prev" aria-label="Previous section"><span>PREV</span></button>
+        <button class="pad-btn pad-ok" data-action="next" aria-label="Advance portfolio"><span>OK</span></button>
+        <button class="pad-btn pad-right" data-target="projects" aria-label="Open project modules"><span>NEXT</span></button>
+        <button class="pad-btn pad-down" data-target="gallery" aria-label="Open gallery stage"><span>STAGE</span></button>
       </div>
     </section>
 
@@ -306,8 +314,10 @@
       </div>
       <img class="final-character" src="./assets/pose-waving-cutout.png" alt="Tong Fan Zai final showcase pose" />
       <div class="final-cards">
-        <button data-detail="final-web">Web Portfolio<img src="./assets/cg/feature-projects.jpg" alt="Web portfolio artwork" /></button>
-        <button data-detail="final-ip">IP System<img src="./assets/cg/feature-profile.jpg" alt="IP system artwork" /></button>
+        <button data-detail="final-web"><span>WEB PORTFOLIO</span><b>Interactive red CG website</b><img src="./assets/cg/feature-projects.jpg" alt="Web portfolio artwork" /></button>
+        <button data-detail="final-ip"><span>IP SYSTEM</span><b>Character boards and standards</b><img src="./assets/cg/feature-profile.jpg" alt="IP system artwork" /></button>
+        <button data-detail="skill-poster"><span>POSTER CODE</span><b>Original poster and info code</b><img src="./assets/poster-qr-thumb.jpg" alt="Poster and code artwork" /></button>
+        <button data-detail="applications"><span>PRODUCTS</span><b>Cultural creative applications</b><img src="./assets/application-03-thumb.jpg" alt="Product application artwork" /></button>
       </div>
     </section>
   </main>

@@ -904,6 +904,10 @@ body.debug-timeline-on .debug-timeline {
   gap: clamp(24px, 5vw, 70px);
 }
 
+.skills {
+  grid-template-columns: minmax(320px, 0.48fr) minmax(520px, 0.9fr);
+}
+
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -919,11 +923,12 @@ body.debug-timeline-on .debug-timeline {
 .final-cards button {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   border: 1px solid rgba(229, 42, 32, 0.26);
-  background: var(--panel);
+  background: rgba(12, 4, 7, 0.9);
   color: var(--cream);
   text-align: left;
-  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.42), inset 0 0 0 1px rgba(248, 239, 222, 0.035);
   transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
 }
 
@@ -940,9 +945,10 @@ body.debug-timeline-on .debug-timeline {
   z-index: 2;
   background:
     repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 5px),
+    linear-gradient(180deg, rgba(3, 3, 6, 0.82) 0, rgba(3, 3, 6, 0.16) 38%, rgba(3, 3, 6, 0.9) 100%),
     linear-gradient(90deg, rgba(229, 42, 32, 0.18), transparent 40%);
   mix-blend-mode: screen;
-  opacity: 0.35;
+  opacity: 0.78;
   pointer-events: none;
 }
 
@@ -1019,42 +1025,97 @@ body.debug-timeline-on .debug-timeline {
   text-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
 }
 
-.controller-panel,
-.remote-ui {
+.gamepad {
   position: absolute;
   right: 8vw;
   bottom: 11vh;
-  z-index: 5;
+  z-index: 16;
   display: grid;
-  grid-template-columns: 38px 54px 38px;
-  grid-template-rows: 38px 54px 38px;
-  gap: 8px;
-  padding: 16px;
-  border: 1px solid rgba(245, 183, 61, 0.32);
-  background: rgba(6, 3, 5, 0.72);
-  box-shadow: 0 0 34px rgba(229, 42, 32, 0.22);
+  grid-template-columns: 48px 66px 48px;
+  grid-template-rows: 48px 66px 48px;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid rgba(245, 183, 61, 0.46);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(229, 42, 32, 0.28), transparent 48%),
+    linear-gradient(145deg, rgba(20, 6, 8, 0.96), rgba(4, 2, 4, 0.84));
+  box-shadow: 0 0 34px rgba(229, 42, 32, 0.32), 0 24px 60px rgba(0, 0, 0, 0.44);
   transform: rotate(-4deg);
+  pointer-events: auto;
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
 }
 
-.controller-panel i,
-.remote-ui i,
-.remote-ui span {
-  border: 1px solid rgba(248, 239, 222, 0.22);
-  background: rgba(229, 42, 32, 0.18);
+.gamepad::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(248, 239, 222, 0.08);
+  pointer-events: none;
 }
 
-.controller-panel b,
-.remote-ui b {
+.pad-btn {
   display: grid;
   place-items: center;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid rgba(248, 239, 222, 0.2);
+  background: linear-gradient(145deg, rgba(94, 8, 13, 0.86), rgba(229, 42, 32, 0.24));
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.84);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.04), 0 0 20px rgba(229, 42, 32, 0.18);
+  transition: transform 0.18s ease, border-color 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+}
+
+.pad-btn:hover,
+.pad-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(245, 183, 61, 0.68);
+  filter: brightness(1.16);
+  box-shadow: inset 0 0 22px rgba(255, 255, 255, 0.08), 0 0 28px rgba(229, 42, 32, 0.42);
+}
+
+.pad-btn span {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.pad-up {
+  grid-column: 2;
+  grid-row: 1;
+  border-radius: 12px 12px 6px 6px;
+}
+
+.pad-left {
+  grid-column: 1;
+  grid-row: 2;
+  border-radius: 12px 6px 6px 12px;
+}
+
+.pad-ok {
   grid-column: 2;
   grid-row: 2;
   border-radius: 50%;
-  background: var(--red);
-  color: #fff;
-  font-family: Impact, "Arial Narrow", sans-serif;
-  letter-spacing: 0.08em;
-  box-shadow: 0 0 30px rgba(229, 42, 32, 0.5);
+  background: radial-gradient(circle at 32% 26%, #fff5bb, var(--gold) 22%, var(--red) 64%, var(--red-dark));
+  font-size: 22px;
+  box-shadow: 0 0 30px rgba(229, 42, 32, 0.52), inset 0 0 16px rgba(255, 255, 255, 0.24);
+}
+
+.pad-right {
+  grid-column: 3;
+  grid-row: 2;
+  border-radius: 6px 12px 12px 6px;
+}
+
+.pad-down {
+  grid-column: 2;
+  grid-row: 3;
+  border-radius: 6px 6px 12px 12px;
 }
 
 .profile-stage {
@@ -1062,6 +1123,8 @@ body.debug-timeline-on .debug-timeline {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   align-self: end;
+  position: relative;
+  z-index: 14;
 }
 
 .data-card {
@@ -1099,27 +1162,29 @@ body.debug-timeline-on .debug-timeline {
 
 .profile-avatar {
   position: absolute;
-  right: 7vw;
-  bottom: 46px;
-  z-index: 8;
-  width: min(25vw, 300px);
-  max-height: 54vh;
+  right: 2.6vw;
+  bottom: 42px;
+  z-index: 5;
+  width: min(20vw, 250px);
+  max-height: 48vh;
   object-fit: contain;
   filter: drop-shadow(0 0 28px rgba(229, 42, 32, 0.46));
+  opacity: 0.88;
   pointer-events: none;
 }
 
 .profile-window-stack {
   position: absolute;
-  left: 38vw;
-  top: 20vh;
-  z-index: 7;
-  width: min(40vw, 560px);
-  height: 430px;
+  left: auto;
+  right: 3vw;
+  top: 13vh;
+  z-index: 4;
+  width: min(34vw, 500px);
+  height: 390px;
   pointer-events: none;
   perspective: 1300px;
-  opacity: 0;
-  transform: translate3d(80px, 30px, -160px) rotateY(-20deg) scale(0.86);
+  opacity: 0.34;
+  transform: translate3d(40px, 10px, -180px) rotateY(-18deg) scale(0.82);
   filter: drop-shadow(0 0 36px rgba(229, 42, 32, 0.28));
 }
 
@@ -1257,19 +1322,22 @@ body.debug-timeline-on .debug-timeline {
 .timeline-rail {
   display: grid;
   gap: 14px;
+  position: relative;
+  z-index: 14;
 }
 
 .journey-depth {
   position: absolute;
-  inset: 12vh 5vw 7vh 38vw;
-  z-index: 3;
+  inset: 13vh 4vw 8vh auto;
+  z-index: 4;
+  width: min(34vw, 520px);
   overflow: hidden;
   border: 1px solid rgba(229, 42, 32, 0.22);
   background:
     radial-gradient(circle at 65% 34%, rgba(245, 183, 61, 0.14), transparent 22%),
     linear-gradient(180deg, rgba(20, 6, 8, 0.5), rgba(3, 3, 6, 0.82));
   clip-path: polygon(0 8%, 95% 0, 100% 82%, 88% 100%, 4% 92%);
-  opacity: 0;
+  opacity: 0.34;
   pointer-events: none;
   transform: translateZ(-180px) scale(0.9);
 }
@@ -1362,6 +1430,7 @@ body.debug-timeline-on .debug-timeline {
   min-height: 126px;
   padding: 14px 16px;
   gap: 16px;
+  background: rgba(13, 4, 7, 0.94);
 }
 
 .timeline-rail b {
@@ -1386,6 +1455,9 @@ body.debug-timeline-on .debug-timeline {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
+  position: relative;
+  z-index: 14;
+  max-width: min(68vw, 920px);
 }
 
 .skill-grid button {
@@ -1395,6 +1467,7 @@ body.debug-timeline-on .debug-timeline {
   padding: 14px;
   font-size: 17px;
   font-weight: 900;
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.9);
 }
 
 .skill-grid img {
@@ -1413,15 +1486,18 @@ body.debug-timeline-on .debug-timeline {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(0deg, rgba(3, 3, 6, 0.88), rgba(3, 3, 6, 0.2));
+  z-index: 2;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 5px),
+    linear-gradient(180deg, rgba(3, 3, 6, 0.58), rgba(3, 3, 6, 0.12) 38%, rgba(3, 3, 6, 0.9));
+  pointer-events: none;
 }
 
 .remote-ui {
-  right: 7vw;
-  top: 18vh;
-  bottom: auto;
-  transform: rotate(5deg);
+  right: clamp(24px, 4vw, 56px);
+  top: auto;
+  bottom: 7vh;
+  transform: rotate(5deg) scale(0.86);
 }
 
 .project-masonry {
@@ -1429,13 +1505,15 @@ body.debug-timeline-on .debug-timeline {
   grid-template-columns: 1.2fr 0.82fr 0.82fr;
   grid-auto-rows: 190px;
   gap: 14px;
+  position: relative;
+  z-index: 14;
 }
 
 .application-stack {
   position: absolute;
   right: 5vw;
   bottom: 6vh;
-  z-index: 4;
+  z-index: 5;
   width: min(48vw, 700px);
   height: 420px;
   pointer-events: none;
@@ -1553,35 +1631,73 @@ body.debug-timeline-on .debug-timeline {
 .stage-lights i:nth-child(4) { animation-delay: -2.1s; }
 
 .contact {
-  grid-template-columns: minmax(360px, 0.8fr) minmax(360px, 0.9fr);
+  grid-template-columns: minmax(300px, 0.44fr) minmax(220px, 0.28fr) minmax(420px, 0.56fr);
+  gap: clamp(18px, 3vw, 46px);
+}
+
+.contact .section-copy {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  max-width: 520px;
+}
+
+.contact .section-copy h2 {
+  font-size: clamp(58px, 7.4vw, 108px);
 }
 
 .final-character {
+  grid-column: 2;
+  grid-row: 1;
   justify-self: center;
   align-self: end;
-  width: min(34vw, 430px);
-  max-height: 62vh;
+  width: min(24vw, 310px);
+  max-height: 58vh;
   object-fit: contain;
   filter: drop-shadow(0 0 34px rgba(229, 42, 32, 0.58));
   animation: characterFloat 4.8s ease-in-out infinite;
 }
 
 .final-cards {
-  position: absolute;
-  right: 7vw;
-  bottom: 68px;
-  z-index: 7;
+  grid-column: 3;
+  grid-row: 1;
+  position: relative;
+  right: auto;
+  bottom: auto;
+  z-index: 14;
   display: grid;
-  grid-template-columns: repeat(2, 190px);
+  grid-template-columns: repeat(2, minmax(190px, 1fr));
   gap: 14px;
+  align-self: center;
+  justify-self: stretch;
 }
 
 .final-cards button {
   display: grid;
   align-content: end;
-  min-height: 154px;
-  padding: 14px;
+  min-height: 176px;
+  padding: 16px;
   font-weight: 900;
+}
+
+.final-cards span,
+.final-cards b {
+  position: relative;
+  z-index: 4;
+  display: block;
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.92);
+}
+
+.final-cards span {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.final-cards b {
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.22;
 }
 
 .final-cards img {
@@ -1760,29 +1876,31 @@ body.showreel-mode[data-transitioning="1"] .transition-bands i {
 }
 
 body.showreel-mode[data-show-phase="profile"] .profile-window-stack {
-  opacity: 1;
-  left: 18vw;
-  top: 11vh;
-  width: min(62vw, 860px);
-  height: 520px;
-  transform: translate3d(-1vw, 0, 280px) rotateY(-3deg) scale(1.06);
+  opacity: 0.28;
+  left: auto;
+  right: -1vw;
+  top: 8vh;
+  width: min(30vw, 460px);
+  height: 360px;
+  transform: translate3d(0, 0, -180px) rotateY(-10deg) scale(0.82);
   transition: opacity 0.5s ease, transform 0.7s cubic-bezier(.16,.92,.2,1);
 }
 
 body.showreel-mode[data-show-phase="profile"] .profile-stage {
-  transform: translate3d(0, 18vh, -120px) rotateX(6deg) scale(0.82);
-  opacity: 0.58;
-  filter: blur(1px);
+  transform: translate3d(1vw, 6vh, 160px) rotateX(2deg) scale(0.98);
+  opacity: 1;
+  filter: none;
 }
 
 body.showreel-mode[data-show-phase="profile"] .profile-avatar {
-  transform: translate3d(-4vw, -8vh, 180px) scale(1.28);
+  transform: translate3d(0, -3vh, 90px) scale(1.04);
+  opacity: 0.84;
 }
 
 body.showreel-mode[data-show-phase="profile"] .profile .section-copy {
-  transform: translate3d(-7vw, 2vh, -140px) scale(0.82);
-  opacity: 0.42;
-  filter: blur(2.2px);
+  transform: translate3d(-2vw, 0, 80px) scale(0.94);
+  opacity: 0.9;
+  filter: none;
 }
 
 body.showreel-mode[data-show-phase="gallery"] .gallery-track {
@@ -1810,14 +1928,14 @@ body.showreel-mode[data-show-phase="gallery"] .gallery-track button:nth-child(n+
 }
 
 body.showreel-mode[data-show-phase="journey"] .timeline-rail {
-  transform: translateX(-8vw) scale(0.82);
-  opacity: 0.55;
-  filter: blur(1px);
+  transform: translateX(-2vw) scale(0.96);
+  opacity: 1;
+  filter: none;
 }
 
 body.showreel-mode[data-show-phase="journey"] .journey-depth {
-  opacity: 1;
-  transform: translate3d(-1vw, 0, 80px) scale(1.04);
+  opacity: 0.52;
+  transform: translate3d(0, 0, -80px) scale(0.96);
   transition: opacity 0.6s ease, transform 1s cubic-bezier(.16,.92,.2,1);
 }
 
@@ -1830,13 +1948,13 @@ body.showreel-mode[data-show-phase="journey"] .journey-character {
 }
 
 body.showreel-mode[data-show-phase="applications"] .project-masonry {
-  transform: translateX(-6vw) scale(0.82);
-  opacity: 0.54;
-  filter: blur(1px);
+  transform: translateX(-1vw) scale(0.98);
+  opacity: 1;
+  filter: none;
 }
 
 body.showreel-mode[data-show-phase="applications"] .application-stack {
-  opacity: 1;
+  opacity: 0.72;
   animation: stackFocus 4s ease-in-out infinite alternate;
 }
 
@@ -1846,11 +1964,15 @@ body.showreel-mode[data-show-phase="applications"] .application-stack img:nth-ch
 }
 
 body.showreel-mode[data-show-phase="finale"] .contact {
-  transform: translateZ(120px) scale(1.04);
+  transform: translateZ(80px) scale(1.01);
 }
 
 body.showreel-mode[data-show-phase="finale"] .final-character {
-  transform: translate3d(-5vw, -3vh, 180px) scale(1.22);
+  transform: translate3d(-1vw, -2vh, 120px) scale(1.08);
+}
+
+body.showreel-mode[data-show-phase="finale"] .final-cards {
+  transform: translate3d(0, 0, 140px);
 }
 
 body.showreel-mode[data-show-phase="return"] .home {
@@ -1996,6 +2118,12 @@ body.showreel-mode[data-show-phase="return"] .scene-bg {
     padding-bottom: 2px;
   }
 
+  .nav-shell nav button {
+    flex: 0 0 auto;
+    min-width: 72px;
+    white-space: nowrap;
+  }
+
   .agent-talk {
     justify-self: end;
   }
@@ -2024,6 +2152,17 @@ body.showreel-mode[data-show-phase="return"] .scene-bg {
     grid-template-columns: 1fr;
   }
 
+  .contact .section-copy,
+  .final-character,
+  .final-cards {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .contact .section-copy {
+    max-width: 100%;
+  }
+
   .home {
     grid-template-columns: minmax(320px, 0.9fr) minmax(320px, 1.1fr);
     min-height: 100svh;
@@ -2048,13 +2187,18 @@ body.showreel-mode[data-show-phase="return"] .scene-bg {
   .profile-window-stack,
   .journey-depth,
   .application-stack,
-  .controller-panel,
-  .remote-ui,
+  .gamepad,
   .final-cards {
     position: relative;
     inset: auto;
     right: auto;
     bottom: auto;
+  }
+
+  .gamepad {
+    width: max-content;
+    margin: 18px auto 0;
+    transform: none;
   }
 
   .remote-orb {
@@ -2089,6 +2233,17 @@ body.showreel-mode[data-show-phase="return"] .scene-bg {
     height: auto;
     min-height: 280px;
     margin-top: 20px;
+  }
+
+  .profile-avatar {
+    width: min(42vw, 260px);
+    max-height: 380px;
+    justify-self: center;
+  }
+
+  .final-character {
+    width: min(42vw, 280px);
+    justify-self: center;
   }
 
   .profile-window-stack {
@@ -2139,8 +2294,12 @@ body.showreel-mode[data-show-phase="return"] .scene-bg {
 
   .nav-shell nav button,
   .agent-talk {
-    padding: 0 8px;
+    padding: 0 10px;
     font-size: 10px;
+  }
+
+  .nav-shell nav button {
+    min-width: 68px;
   }
 
   .panel {

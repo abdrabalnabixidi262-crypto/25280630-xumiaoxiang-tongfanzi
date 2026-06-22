@@ -13,6 +13,7 @@ const query = new URLSearchParams(window.location.search);
 const showreelMode = query.get("showreel") === "1";
 const debugMode = query.get("debugTimeline") === "1";
 let transitionLocked = false;
+let transitionTimer = 0;
 let showreelStart = 0;
 let showreelFrame = 0;
 let touchStartY = 0;
@@ -255,8 +256,9 @@ details["final-web"] = details.finalWeb;
 details["final-ip"] = details.finalIp;
 
 function setActivePanel(id) {
-  if (transitionLocked) return;
   const next = panels.has(id) ? id : "home";
+  if (document.body.dataset.activePanel === next && transitionLocked) return;
+  if (transitionTimer) window.clearTimeout(transitionTimer);
   transitionLocked = true;
   document.body.dataset.transitioning = "1";
   panels.forEach((panel, panelId) => {
@@ -266,9 +268,10 @@ function setActivePanel(id) {
     button.classList.toggle("active", button.dataset.target === next);
   });
   document.body.dataset.activePanel = next;
-  window.setTimeout(() => {
+  transitionTimer = window.setTimeout(() => {
     transitionLocked = false;
     document.body.dataset.transitioning = "0";
+    transitionTimer = 0;
   }, showreelMode ? 320 : 780);
 }
 
@@ -325,6 +328,15 @@ function goRelative(direction) {
   const current = document.body.dataset.activePanel || "home";
   const index = Math.max(0, panelOrder.indexOf(current));
   setActivePanel(panelOrder[(index + direction + panelOrder.length) % panelOrder.length]);
+}
+
+function runAction(action) {
+  const actions = {
+    next: () => goRelative(1),
+    prev: () => goRelative(-1),
+    home: () => setActivePanel("home"),
+  };
+  actions[action]?.();
 }
 
 const showreelTimeline = [
@@ -389,6 +401,11 @@ window.__setShowreelTime = (second) => {
 };
 
 document.addEventListener("click", (event) => {
+  const actionButton = event.target.closest("[data-action]");
+  if (actionButton) {
+    runAction(actionButton.dataset.action);
+    return;
+  }
   const targetButton = event.target.closest("[data-target]");
   if (targetButton) {
     setActivePanel(targetButton.dataset.target);
