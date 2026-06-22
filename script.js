@@ -69,7 +69,8 @@ const gallerySets = {
     image("./assets/actions-board.png", "Standard action guide board"),
     image("./assets/colors-board.png", "Proportion and color standard board"),
     image("./assets/elements-board.png", "Basic element library"),
-    image("./assets/poster-qr.png", "Original poster and scannable work information code"),
+    image("./assets/wechat-site-qr-card.svg", "WeChat scannable website information code"),
+    image("./assets/wechat-site-qr.png", "Pure website QR code for WeChat scanning"),
   ],
 };
 
@@ -158,7 +159,8 @@ const details = {
     text: "Tong Fan Zai carries Quanzhou's Maritime Silk Road story for city event pages, posters, short-video covers and tourism materials.",
     images: [
       image("./assets/hero-wide.jpg", "Quanzhou IP hero visual"),
-      image("./assets/poster-qr.png", "Original poster and work information code"),
+      image("./assets/wechat-site-qr-card.svg", "WeChat scannable website information code"),
+      image("./assets/wechat-site-qr.png", "Pure website QR code for WeChat scanning"),
       image("./assets/cg/feature-profile.jpg", "Character profile CG card"),
     ],
   },
@@ -173,11 +175,11 @@ const details = {
     images: gallerySets.motion,
   },
   "skill-poster": {
-    title: "POSTER & INFO CODE",
-    text: "The original poster and work information code connect offline exhibition materials with the online portfolio. The QR area is kept from the provided asset instead of being redrawn.",
+    title: "WECHAT WEBSITE CODE",
+    text: "This high-contrast QR code is encoded with the public portfolio URL. Scanning it in WeChat opens the Tong Fan Zai website directly.",
     images: [
-      image("./assets/poster-qr.png", "Original poster and information code"),
-      image("./assets/poster-qr-thumb.jpg", "Poster thumbnail"),
+      image("./assets/wechat-site-qr-card.svg", "WeChat scannable website information card"),
+      image("./assets/wechat-site-qr.png", "Pure website QR code for WeChat scanning"),
       image("./assets/cg/work-card-05.jpg", "CG packaged application card"),
     ],
   },
